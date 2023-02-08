@@ -1,7 +1,17 @@
-<h1>Pets</h1>
+<div class="container">
+  <h1>Pets</h1>
 
-<ul>
-  <% @pets.each do |pet| %>
-    <li><%= pet.species_icon %> <%= pet.name %> the <%= pet.species.humanize %></li>
-  <% end %>
-</ul>
+  <div class="row">
+    <div class="col-4">
+      
+    </div>
+
+    <div class="col-8">
+      <ul class="list-group">
+        <% @pets.each do |pet| %>
+          <li class="list-group-item"><%= pet.species_icon %> <%= pet.name %> the <%= pet.species.humanize %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
