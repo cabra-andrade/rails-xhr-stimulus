@@ -11,7 +11,9 @@ class PetsController < ApplicationController
 
   private
 
+  helper_method :pets_search_params
+
   def pets_search_params
-    params.require(:pets_search).compact_blank.permit(:name, :species)
+    params.require(:search_form_component).compact_blank.permit(:name, :species)
   end
 end

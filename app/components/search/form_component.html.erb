@@ -1,0 +1,6 @@
+<%= simple_form_for self, url: search_pets_path, method: :get do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species %>
+  <div class="mb-3"></div>
+  <%= f.button :submit, 'Search', class: 'btn-primary' %>
+<% end %>

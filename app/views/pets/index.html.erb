@@ -1,22 +1,7 @@
 <div class="container">
   <h1>Pets</h1>
-
-  <div class="row">
-    <div class="col-4">
-      <%= simple_form_for :pets_search, url: search_pets_path, method: :get do |f| %>
-        <%= f.input :name, required: false %>
-        <%= f.input :species, required: false %>
-        <div class="mb-3"></div>
-        <%= f.button :submit, 'Search', class: 'btn-primary' %>
-      <% end %>
-    </div>
-
-    <div class="col-8">
-      <ul class="list-group">
-        <% @pets.each do |pet| %>
-          <li class="list-group-item"><%= pet.species_icon %> <%= pet.name %> the <%= pet.species.humanize %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
+  <%= render Search::Component.new do |component| %>
+    <% component.with_form(pets_search_params) %>
+    <% component.with_list(@pets) %>
+  <% end %>
 </div>
