@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '3.1.2'
 
 gem 'rails', '~> 6.1.7', '>= 6.1.7.1'
 gem 'sqlite3', '~> 1.4'
@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'turbolinks', '~> 5'
 
 gem 'faker'
+gem 'simple_form'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
