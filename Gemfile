@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 
 gem 'faker'
 gem 'simple_form'
+gem "view_component"
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
