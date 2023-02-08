@@ -3,7 +3,12 @@
 
   <div class="row">
     <div class="col-4">
-      
+      <%= simple_form_for :pets_search, url: search_pets_path, method: :get do |f| %>
+        <%= f.input :name, required: false %>
+        <%= f.input :species, required: false %>
+        <div class="mb-3"></div>
+        <%= f.button :submit, 'Search', class: 'btn-primary' %>
+      <% end %>
     </div>
 
     <div class="col-8">
