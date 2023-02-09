@@ -1,19 +1,19 @@
 class PetsController < ApplicationController
   def index
+    @search = Pet::Search.new
     @pets = Pet.all
   end
 
   def search
-    @pets = Pet.where(pets_search_params)
+    @search = Pet::Search.new(pets_search_params)
+    @pets = @search.valid? ? Pet.where(pets_search_params) : Pet.none
 
     render :index
   end
 
   private
 
-  helper_method :pets_search_params
-
   def pets_search_params
-    params.require(:search_form_component).compact_blank.permit(:name, :species)
+    params.require(:pet_search).compact_blank.permit(:name, :species)
   end
 end
