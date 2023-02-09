@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Pets</h1>
   <%= render Search::Component.new do |component| %>
-    <% component.with_form(pets_search_params) %>
+    <% component.with_form(@search) %>
     <% component.with_list(@pets) %>
   <% end %>
 </div>

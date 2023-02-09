@@ -1,5 +1,9 @@
 <ul class="list-group">
-  <% pets.each do |pet| %>
-    <li class="list-group-item"><%= pet.species_icon %> <%= pet.name %> the <%= pet.species.humanize %></li>
+  <% if pets.any? %>
+    <% pets.each do |pet| %>
+      <li class="list-group-item"><%= pet.species_icon %> <%= pet.name %> the <%= pet.species.humanize %></li>
+    <% end %>
+  <% else %>
+    <li class="list-group-item bg-info">No pets to show here</li>
   <% end %>
 </ul>
